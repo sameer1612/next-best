@@ -1,0 +1,16 @@
+.wrapper {
+  width: 80%;
+}
+
+.search-results {
+  height: 10rem;
+  display: flex;
+  overflow: auto;
+
+  img {
+    cursor: pointer;
+    &:hover {
+      transform: scale(98%);
+    }
+  }
+}

@@ -1,0 +1,18 @@
+.card-wrapper {
+  height: 100%;
+  width: min-content;
+  .media-card {
+    height: 100%;
+  }
+  .close-button {
+    position: absolute;
+    cursor: pointer;
+  }
+
+  &:hover {
+    transform: scale(98%);
+  }
+}
+
+@media only screen and (max-width: 600px) {
+}

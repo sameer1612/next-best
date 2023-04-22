@@ -1,0 +1,41 @@
+.hero {
+  background: rgb(9, 9, 121);
+  background: -moz-linear-gradient(
+    180deg,
+    rgba(9, 9, 121, 1) 0%,
+    rgba(0, 212, 255, 1) 100%
+  );
+  background: -webkit-linear-gradient(
+    180deg,
+    rgba(9, 9, 121, 1) 0%,
+    rgba(0, 212, 255, 1) 100%
+  );
+  background: linear-gradient(
+    180deg,
+    rgba(9, 9, 121, 1) 0%,
+    rgba(0, 212, 255, 1) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#090979", endColorstr="#00d4ff", GradientType=1);
+
+  height: 60vh;
+  clip-path: ellipse(75% 50% at 50% 35%);
+  z-index: 0;
+}
+
+.header {
+  z-index: 1;
+}
+
+.selected-medias {
+  display: flex;
+  height: 16rem;
+  gap: 1rem;
+  overflow: auto;
+}
+
+@media only screen and (max-width: 600px) {
+  .hero {
+    height: 50vh;
+    clip-path: ellipse(100% 50% at 50% 35%);
+  }
+}
