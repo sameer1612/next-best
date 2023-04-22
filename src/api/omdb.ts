@@ -1,5 +1,5 @@
 import axios from "axios";
-import { Entity, MediaType, SearchResponse } from "../types";
+import { MediaDetails, MediaType, SearchResponse } from "../types";
 
 const BASE_URL = "https://www.omdbapi.com";
 
@@ -14,7 +14,7 @@ export async function getDetails(term: string, type: MediaType) {
     },
   });
 
-  return response.data as Entity;
+  return response.data as MediaDetails;
 }
 
 export async function getSearchResults(term: string, type: MediaType) {

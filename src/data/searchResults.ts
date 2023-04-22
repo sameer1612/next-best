@@ -1,6 +1,6 @@
-import { SearchResult } from "../types";
+import { SearchResponse } from "../types";
 
-export const sampleSearchResults: SearchResult = {
+export const sampleSearchResults: SearchResponse = {
   Search: [
     {
       Title: "Sherlock",
