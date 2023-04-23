@@ -9,6 +9,7 @@
 This project is built using vite and react.
 
 * Clone the repository and run `yarn` or `npm install`
+* Add omdb api key in the `.env` file. Grab a free key from http://www.omdbapi.com/apikey.aspx
 * Run `yarn dev` to start the local server.
 * Visit http://localhost:4200
 * Clone and setup the backend from https://github.com/sameer1612/next-best-api
