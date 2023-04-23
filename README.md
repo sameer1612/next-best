@@ -1,7 +1,7 @@
 # NextBest
 
 > NextBest is an AI powered recommendation system.
-> It can recommend movies, series and books based on your past interests.
+> It can recommend movies and series based on your past interests. It can be extended to any category of interests like books, food, destinations, etc.
 > You also get a personality analysis based on your choices.
 
 ## Getting Started
