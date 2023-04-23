@@ -12,3 +12,7 @@ This project is built using vite and react.
 * Run `yarn dev` to start the local server.
 * Visit http://localhost:4200
 * Clone and setup the backend from https://github.com/sameer1612/next-best-api
+
+## App in action:
+[![Everything Is AWESOME](https://github.com/sameer1612/next-best/blob/main/nextbest.png)](https://www.youtube.com/watch?v=1IosTJ-nCCs "NextBest recommendation AI")
+
