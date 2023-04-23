@@ -33,6 +33,12 @@
   overflow: auto;
 }
 
+pre {
+  white-space: pre-wrap;
+  font-family: Inter;
+  font-size: medium;
+}
+
 @media only screen and (max-width: 600px) {
   .hero {
     height: 50vh;

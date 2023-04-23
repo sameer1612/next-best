@@ -9,7 +9,6 @@
 This project is built using vite and react.
 
 * Clone the repository and run `yarn` or `npm install`
-* Generate a free openAI key. We'll need it to power the AI. https://platform.openai.com/account/api-keys
-* Paste the key in `.env` file
 * Run `yarn dev` to start the local server.
 * Visit http://localhost:4200
+* Clone and setup the backend from https://github.com/sameer1612/next-best-api

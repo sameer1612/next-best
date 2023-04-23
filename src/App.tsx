@@ -1,19 +1,16 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Button, Container } from "react-bootstrap";
 import "./App.scss";
-import { Footer } from "./components/footer/footer.tsx";
+import { getAbout, getCompletion } from "./api/openai.ts";
 import Header from "./components/header/header.tsx";
 import { MediaCard } from "./components/media-card/media-card.tsx";
 import { Search } from "./components/search/search.tsx";
-import { sampleEntities } from "./data/entities.ts";
 import { Media } from "./types.ts";
 
 export function App() {
   const [medias, setMedias] = useState<Media[]>([]);
-
-  useEffect(() => {
-    setMedias(sampleEntities);
-  }, []);
+  const [recommendations, setRecommendations] = useState<string>("");
+  const [about, setAbout] = useState<string>("");
 
   function insertMedia(media: Media) {
     setMedias([...medias, media]);
@@ -23,15 +20,36 @@ export function App() {
     setMedias(medias.filter((m) => m.Title !== media.Title));
   }
 
+  async function analyze() {
+    try {
+      const recs = await getCompletion(medias.map((m) => m.Title));
+      setRecommendations(recs);
+
+      const aboutRes = await getAbout(medias.map((m) => m.Title));
+      setAbout(aboutRes);
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    } catch (error: any) {
+      alert(error.message);
+    }
+  }
+
   return (
     <>
       <Header />
       <div className="hero d-flex flex-column justify-content-center align-items-center">
         <Search insertMedia={insertMedia} />
-        {medias.length ? (
-          <Button variant="outline-light" size="lg" className="px-4">
-            Analyze
-          </Button>
+        {medias.length == 0 ? (
+          <>
+            <Button
+              variant="outline-light"
+              size="lg"
+              className="px-4"
+              onClick={analyze}
+            >
+              Analyze
+            </Button>
+            <small className="text-light">Select atleast 3</small>
+          </>
         ) : null}
       </div>
       {medias.length ? (
@@ -45,7 +63,18 @@ export function App() {
           ))}
         </Container>
       ) : null}
-      <Footer />
+      {recommendations ? (
+        <Container className="mt-5">
+          <h4>Based on your choices recommendations are: </h4>
+          <pre>{recommendations}</pre>
+        </Container>
+      ) : null}
+      {about ? (
+        <Container className="my-5">
+          <h4>What your choices tell about you: </h4>
+          <pre>{about}</pre>
+        </Container>
+      ) : null}
     </>
   );
 }
