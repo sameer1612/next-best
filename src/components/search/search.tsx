@@ -57,7 +57,7 @@ export function Search({ insertMedia }: SearchProps) {
           <option value={MediaType.SERIES}>TV Series</option>
         </Form.Select>
         <Button variant="light" className="px-4" onClick={handleSearch}>
-          Add
+          Search
         </Button>
       </div>
       {searchResults.length ? (
